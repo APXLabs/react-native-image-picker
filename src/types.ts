@@ -16,6 +16,7 @@ export interface CameraOptions
   durationLimit?: number;
   saveToPhotos?: boolean;
   cameraType?: CameraType;
+  cameraFlashMode?: CameraFlashMode;
 }
 
 export interface Asset {
@@ -52,6 +53,7 @@ export type PhotoQuality =
   | 0.9
   | 1;
 export type CameraType = 'back' | 'front';
+export type CameraFlashMode = 'auto' | 'on' | 'off';
 export type MediaType = 'photo' | 'video' | 'mixed';
 export type AndroidVideoOptions = 'low' | 'high';
 export type iOSVideoOptions = 'low' | 'medium' | 'high';

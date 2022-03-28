@@ -11,6 +11,7 @@ const DEFAULT_OPTIONS: ImageLibraryOptions & CameraOptions = {
   maxHeight: 0,
   includeBase64: false,
   cameraType: 'back',
+  cameraFlashMode: 'auto',
   selectionLimit: 1,
   saveToPhotos: false,
   durationLimit: 0,

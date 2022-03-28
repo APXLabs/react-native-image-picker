@@ -43,6 +43,14 @@
         picker.mediaTypes = @[(NSString *)kUTTypeImage, (NSString *)kUTTypeMovie];
     }
 
+    if([[options objectForKey:@"cameraFlashMode"] isEqualToString:@"on"]) {
+        picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOn;
+    } else if ([[options objectForKey:@"cameraFlashMode"] isEqualToString:@"off"]) {
+        picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
+    } else {
+        picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
+    }
+
     picker.modalPresentationStyle = UIModalPresentationCurrentContext;
 }
 
