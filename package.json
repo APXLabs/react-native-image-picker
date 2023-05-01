@@ -50,7 +50,7 @@
     "@types/react": "16.9.54",
     "@types/react-native": "0.63.30",
     "semantic-release": "17.3.0",
-    "typescript": "4.1.5"
+    "typescript": "4.8.x"
   },
   "@react-native-community/bob": {
     "source": "src",
