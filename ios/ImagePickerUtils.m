@@ -39,7 +39,7 @@
         picker.mediaTypes = @[(NSString *)kUTTypeMovie];
     } else if ([options[@"mediaType"] isEqualToString:@"photo"]) {
         picker.mediaTypes = @[(NSString *)kUTTypeImage];
-    } else if ((target == library) && ([options[@"mediaType"] isEqualToString:@"mixed"])) {
+    } else if ([options[@"mediaType"] isEqualToString:@"mixed"]) {
         picker.mediaTypes = @[(NSString *)kUTTypeImage, (NSString *)kUTTypeMovie];
     }
 
@@ -50,8 +50,8 @@
     } else {
         picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
     }
-
-    picker.modalPresentationStyle = UIModalPresentationCurrentContext;
+    
+    picker.modalPresentationStyle = [RCTConvert UIModalPresentationStyle:options[@"presentationStyle"]];
 }
 
 + (PHPickerConfiguration *)makeConfigurationFromOptions:(NSDictionary *)options target:(RNImagePickerTarget)target API_AVAILABLE(ios(14))
@@ -66,7 +66,7 @@
         configuration = [[PHPickerConfiguration alloc] init];
     }
     
-    configuration.preferredAssetRepresentationMode = PHPickerConfigurationAssetRepresentationModeCurrent;
+    configuration.preferredAssetRepresentationMode = PHPickerConfigurationAssetRepresentationModeAutomatic;
     configuration.selectionLimit = [options[@"selectionLimit"] integerValue];
 
     if ([options[@"mediaType"] isEqualToString:@"video"]) {
